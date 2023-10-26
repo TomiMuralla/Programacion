@@ -1,7 +1,7 @@
 
 package coloquiotomi;
 
-public class Empleados {
+abstract class Empleados {
     
     
 }

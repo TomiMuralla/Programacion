@@ -7,6 +7,48 @@ public class Coches {
     int Numero, Asientos;
     String Modelo, Patente;
 
+    public Coches() {
+        this.Numero = Numero;
+        this.Asientos = Asientos;
+        this.Modelo = Modelo;
+        this.Patente = Patente;
+    }
+
+    public int getNumero() {
+        return Numero;
+    }
+
+    public void setNumero(int Numero) {
+        this.Numero = Numero;
+    }
+
+    public int getAsientos() {
+        return Asientos;
+    }
+
+    public void setAsientos(int Asientos) {
+        this.Asientos = Asientos;
+    }
+
+    public String getModelo() {
+        return Modelo;
+    }
+
+    public void setModelo(String Modelo) {
+        this.Modelo = Modelo;
+    }
+
+    public String getPatente() {
+        return Patente;
+    }
+
+    public void setPatente(String Patente) {
+        this.Patente = Patente;
+    }
+
+    
+    
+    
     public void NumeroCoche() {
         int[] lista = new int[10];
         Random alazar = new Random();
