@@ -8,5 +8,9 @@ package coloquiotomi;
 
 public class Chofers extends Empleados{
     
-        
+    public void Chofers(){
+        this.NombreEmpleado = NombreEmpleado;
+        this.Puesto = Puesto;
+        this.edad = edad;
+}
 }

@@ -7,7 +7,7 @@ public class Coches {
     int Numero, Asientos;
     String Modelo, Patente;
 
-    public Coches() {
+    public Coches(){
         this.Numero = Numero;
         this.Asientos = Asientos;
         this.Modelo = Modelo;
@@ -50,24 +50,37 @@ public class Coches {
     
     
     public void NumeroCoche() {
-        int[] lista = new int[10];
+        Coches lista[] = new Coches[10];
         Random alazar = new Random();
         
         int ananache;
         ananache = 0;
 
         while (ananache < 10) {
+            lista[ananache] = new Coches();  //Inicializo las variables. (es diferente en un array que en un objeto normal.)
             int NumRandom = alazar.nextInt(100)+ 1 ;
-            if ((NumRandom % 3 == 0) && NumRandom != lista[ananache]
+            if ((NumRandom % 3 == 0) && NumRandom != lista[ananache].getNumero()
                     ) {
-                lista[ananache] = NumRandom;
+                        lista[ananache].setNumero(NumRandom);
+                        lista[ananache].setAsientos(alazar.nextInt(3)+3); //Crea un random 0, le suma 3, queda 3 puertas, random 1, le suma 3, queda 4 puertas, random 2, suma 3, queda 5 puertas.
+                        lista[ananache].setModelo("Focus X 1." + NumRandom);
+                        lista[ananache].setPatente("AG" + alazar.nextInt(999) + "FK");
+
                 ananache++;
             }
         }
       for (int j=0; j <=9; j++){
-          System.out.println("Coche nº " + lista[j]);
+        //  System.out.println("Coche nº " + lista[j]);
+         System.out.println("Modelo = " + lista[j].getModelo()+"\n"+
+         "Numero = " + lista[j].getNumero()+"\n"+
+         "Asientos = " + lista[j].getAsientos()+"\n"+
+         "Patente = " + lista[j].getPatente()+"\n");
       }
-        
+            
+    }
+    
+}
+
         /* int[] lista = new int[10];
         Random alazar = new Random();
  
@@ -84,8 +97,22 @@ public class Coches {
             }
         }         
         }*/
- 
-    
-    }
-    
+ /* La inicialización de variables es diferente cuando se trata de una simple variable en comparación con un arreglo. Para una variable única, puedes inicializarla al crear el objeto, como en el caso que mencionaste:
+
+java
+Copy code
+Coches Ford = new Coches();
+En este caso, la variable Ford es una instancia de la clase Coches, y se inicializa al mismo tiempo que se crea.
+
+Por otro lado, cuando se trata de un arreglo, como en el ejemplo que proporcioné:
+
+java
+Copy code
+Coches[] lista = new Coches[10];
+
+for (int i = 0; i < lista.length; i++) {
+    lista[i] = new Coches();
 }
+Primero creas el arreglo lista con espacio para 10 elementos, pero los elementos en sí son inicializados como null. Luego, en un bucle, inicializas cada elemento del arreglo como una instancia de la clase Coches utilizando new Coches(). Esto es necesario para que cada elemento del arreglo sea un objeto válido y pueda utilizarse.
+
+La diferencia fundamental es que en el caso de una variable única, el objeto se inicializa al mismo tiempo que se crea, mientras que en el caso de un arreglo, los elementos del arreglo deben inicializarse individualmente después de crear el arreglo. */
