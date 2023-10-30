@@ -1,10 +1,8 @@
 package coloquiotomi;
 
-
 public class Chofers extends Empleados{
     protected String Tipo,Vehiculo;
     protected int idChofer; 
-
         //Constructor
 
     public Chofers(String NombreEmpleado, String Puesto, int edad,String Tipo, String Vehiculo, int idChofer) {
@@ -41,6 +39,7 @@ public class Chofers extends Empleados{
     }
 
     // Termina Setter y Getter
+
 
 public void MostrarEmpleado(){
 System.out.println(
