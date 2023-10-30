@@ -59,10 +59,12 @@ public class Coches {
         int ananache;
         ananache = 0;
 
-
         Random alazar2 = new Random();
         String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   
+        String[] Marca = { "Volkswagen", "Ford", "Volvo", "Chevrolet", "Nissan", "Audi", "BMW", "Renault", "Fiat",
+                "Honda", "Hyundai", "KIA", "Tesla" };
+        int marcarandom = alazar2.nextInt(12);
+
         while (ananache < 10) {
 
             lista[ananache] = new Coches(); // Inicializo las variables. (es diferente en un array que en un objeto
@@ -83,10 +85,11 @@ public class Coches {
                 lista[ananache].setAsientos(alazar.nextInt(3) + 3); // Crea un random 0, le suma 3, queda 3 puertas,
                                                                     // random 1, le suma 3, queda 4 puertas, random 2,
                                                                     // suma 3, queda 5 puertas.
-                lista[ananache].setModelo("Focus X 1." + NumRandom);
+                lista[ananache].setModelo(Marca[marcarandom] + " " + "1." + NumRandom);
                 lista[ananache].setPatente(letrita1 + letrita2 + alazar.nextInt(999) + letrita3 + letrita4);
                 // letrarandom1 = 'A';
                 // letrarandom1 = abc.charAt(alazar2.nextInt(abc.length()));
+                marcarandom = alazar2.nextInt(12);
                 ananache++;
             }
         }
@@ -99,8 +102,9 @@ public class Coches {
         }
 
     }
-    
+
 }
+
 
 /*
  * int[] lista = new int[10];
