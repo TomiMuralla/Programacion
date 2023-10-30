@@ -45,9 +45,12 @@ public class Coches {
     public void setPatente(String Patente) {
         this.Patente = Patente;
     }
-
-    
-    
+     Random alazar2 = new Random();
+    String abc ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char letrarandom1 = abc.charAt(alazar2.nextInt(abc.length()));
+        char letrarandom2 = abc.charAt(alazar2.nextInt(abc.length()));
+    char letrarandom3 = abc.charAt(alazar2.nextInt(abc.length()));
+        char letrarandom4 = abc.charAt(alazar2.nextInt(abc.length()));
     
     public void NumeroCoche() {
         Coches lista[] = new Coches[10];
@@ -56,27 +59,45 @@ public class Coches {
         int ananache;
         ananache = 0;
 
-        while (ananache < 10) {
-            lista[ananache] = new Coches();  //Inicializo las variables. (es diferente en un array que en un objeto normal.)
-            int NumRandom = alazar.nextInt(100)+ 1 ;
-            if ((NumRandom % 3 == 0) && NumRandom != lista[ananache].getNumero()
-                    ) {
-                        lista[ananache].setNumero(NumRandom);
-                        lista[ananache].setAsientos(alazar.nextInt(3)+3); //Crea un random 0, le suma 3, queda 3 puertas, random 1, le suma 3, queda 4 puertas, random 2, suma 3, queda 5 puertas.
-                        lista[ananache].setModelo("Focus X 1." + NumRandom);
-                        lista[ananache].setPatente("AG" + alazar.nextInt(999) + "FK");
 
+        Random alazar2 = new Random();
+        String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   
+        while (ananache < 10) {
+
+            lista[ananache] = new Coches(); // Inicializo las variables. (es diferente en un array que en un objeto
+                                            // normal.)
+            int NumRandom = alazar.nextInt(100) + 1;
+
+            char letrarandom1 = abc.charAt(alazar2.nextInt(abc.length()));
+            char letrarandom2 = abc.charAt(alazar2.nextInt(abc.length()));
+            char letrarandom3 = abc.charAt(alazar2.nextInt(abc.length()));
+            char letrarandom4 = abc.charAt(alazar2.nextInt(abc.length()));
+            String letrita1 = String.valueOf(letrarandom1);
+            String letrita2 = String.valueOf(letrarandom2);
+            String letrita3 = String.valueOf(letrarandom3);
+            String letrita4 = String.valueOf(letrarandom4);
+
+            if ((NumRandom % 3 == 0) && NumRandom != lista[ananache].getNumero()) {
+                lista[ananache].setNumero(NumRandom);
+                lista[ananache].setAsientos(alazar.nextInt(3) + 3); // Crea un random 0, le suma 3, queda 3 puertas,
+                                                                    // random 1, le suma 3, queda 4 puertas, random 2,
+                                                                    // suma 3, queda 5 puertas.
+                lista[ananache].setModelo("Focus X 1." + NumRandom);
+                lista[ananache].setPatente(letrita1 + letrita2 + alazar.nextInt(999) + letrita3 + letrita4);
+                // letrarandom1 = 'A';
+                // letrarandom1 = abc.charAt(alazar2.nextInt(abc.length()));
                 ananache++;
             }
         }
-      for (int j=0; j <=9; j++){
-        //  System.out.println("Coche nº " + lista[j]);
-         System.out.println("Modelo = " + lista[j].getModelo()+"\n"+
-         "Numero = " + lista[j].getNumero()+"\n"+
-         "Asientos = " + lista[j].getAsientos()+"\n"+
-         "Patente = " + lista[j].getPatente()+"\n");
-      }
-            
+        for (int j = 0; j <= 9; j++) {
+            // System.out.println("Coche nº " + lista[j]);
+            System.out.println("Modelo = " + lista[j].getModelo() + "\n" +
+                    "Numero = " + lista[j].getNumero() + "\n" +
+                    "Asientos = " + lista[j].getAsientos() + "\n" +
+                    "Patente = " + lista[j].getPatente() + "\n");
+        }
+
     }
     
 }
