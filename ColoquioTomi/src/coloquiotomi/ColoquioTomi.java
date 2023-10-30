@@ -15,5 +15,3 @@ public class ColoquioTomi {
     }
 
 }
-
-// "Pedro", "Categoria A", 32, "Taxista", "Renault", 12
